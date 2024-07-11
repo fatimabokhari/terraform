@@ -18,6 +18,12 @@ on:
 
 jobs:
   terraform:
+  name: Configure AWS credentials    
+       uses: aws-actions/configure-aws-credentials@v2    
+       with:    aws-access-key-id: ${{ secrets.ACCESS_KEY }}   
+       aws-secret-access-key: ${{ secrets.SECRET_KEY }}           
+       aws-region: us-east-1
+
     name: Run Terraform
     runs-on: ubuntu-latest
 
